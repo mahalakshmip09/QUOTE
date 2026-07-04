@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solar Quotation Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">☼</span>
+    <div>
+      <p class="brand-name">Sunline Solar</p>
+      <p class="brand-tag">Quotation Builder</p>
+    </div>
+  </div>
+  <p class="topbar-note">Select materials on the left. Only the total will be shown to the customer.</p>
+</header>
+
+<main class="layout">
+
+  <!-- ============================================================
+       CATALOG (admin side). To add a new material, copy ONE
+       .material-item block and edit the text + data-price value.
+       You do not need to touch the CSS or JS files.
+
+       Template to copy:
+
+       <div class="material-item" data-price="0">
+         <div class="material-info">
+           <p class="material-name">Item name</p>
+           <p class="material-spec">Short spec line</p>
+         </div>
+         <div class="material-controls">
+           <input type="checkbox" class="material-check">
+           <input type="number" class="material-qty" value="1" min="1">
+           <span class="material-price">₹0</span>
+         </div>
+       </div>
+
+       To add a whole new category, copy a .category block and
+       give it a new .cat-code and heading.
+     ============================================================ -->
+
+  <section class="catalog">
+
+    <div class="category" id="cat-ongrid">
+      <div class="category-head">
+        <span class="cat-code">INV&nbsp;01</span>
+        <h2>On&#8209;Grid Inverters</h2>
+      </div>
+
+      <div class="material-item" data-price="18500">
+        <div class="material-info">
+          <p class="material-name">3 kW On-Grid Inverter</p>
+          <p class="material-spec">Single phase · MPPT · 5 yr warranty</p>
+        </div>
+        <div class="material-controls">
+          <input type="checkbox" class="material-check">
+          <input type="number" class="material-qty" value="1" min="1">
+          <span class="material-price">₹18,500</span>
+        </div>
+      </div>
+
+      <div class="material-item" data-price="27500">
+        <div class="material-info">
+          <p class="material-name">5 kW On-Grid Inverter</p>
+          <p class="material-spec">Single phase · MPPT · 5 yr warranty</p>
+        </div>
+        <div class="material-controls">
+          <input type="checkbox" class="material-check">
+          <input type="number" class="material-qty" value="1" min="1">
+          <span class="material-price">₹27,500</span>
+        </div>
+      </div>
+
+      <div class="material-item" data-price="52000">
+        <div class="material-info">
+          <p class="material-name">10 kW On-Grid Inverter</p>
+          <p class="material-spec">Three phase · MPPT · 5 yr warranty</p>
+        </div>
+        <div class="material-controls">
+          <input type="checkbox" class="material-check">
+          <input type="number" class="material-qty" value="1" min="1">
+          <span class="material-price">₹52,000</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="category" id="cat-offgrid">
+      <div class="category-head">
+        <span class="cat-code">INV&nbsp;02</span>
+        <h2>Off&#8209;Grid Inverters</h2>
+      </div>
+
+      <div class="material-item" data-price="22000">
+        <div class="material-info">
+          <p class="material-name">3 kW Off-Grid Inverter</p>
+          <p class="material-spec">Built-in charge controller · battery ready</p>
+        </div>
+        <div class="material-controls">
+          <input type="checkbox" class="material-check">
+          <input type="number" class="material-qty" value="1" min="1">
+          <span class="material-price">₹22,000</span>
+        </div>
+      </div>
+
+      <div class="material-item" data-price="34500">
+        <div class="material-info">
+          <p class="material-name">5 kW Off-Grid Inverter</p>
+          <p class="material-spec">Built-in charge controller · battery ready</p>
+        </div>
+        <div class="material-controls">
+          <input type="checkbox" class="material-check">
+          <input type="number" class="material-qty" value="1" min="1">
+          <span class="material-price">₹34,500</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="category" id="cat-other">
+      <div class="category-head">
+        <span class="cat-code">GEN&nbsp;01</span>
+        <h2>Other Materials</h2>
+      </div>
+
+      <div class="material-item" data-price="15500">
+        <div class="material-info">
+          <p class="material-name">330W Solar Panel</p>
+          <p class="material-spec">Monocrystalline · per unit</p>
+        </div>
+        <div class="material-controls">
+          <input type="checkbox" class="material-check">
+          <input type="number" class="material-qty" value="1" min="1">
+          <span class="material-price">₹15,500</span>
+        </div>
+      </div>
+
+      <div class="material-item" data-price="9500">
+        <div class="material-info">
+          <p class="material-name">150Ah Solar Battery</p>
+          <p class="material-spec">Tubular · per unit</p>
+        </div>
+        <div class="material-controls">
+          <input type="checkbox" class="material-check">
+          <input type="number" class="material-qty" value="1" min="1">
+          <span class="material-price">₹9,500</span>
+        </div>
+      </div>
+
+      <!-- Add more materials here -->
+    </div>
+
+  </section>
+
+  <!-- ================= CUSTOMER-FACING SUMMARY ================= -->
+  <aside class="summary">
+    <div class="summary-card">
+      <p class="summary-eyebrow">Quotation Total</p>
+      <div class="panel-texture" aria-hidden="true"></div>
+      <p class="summary-amount" id="totalAmount">₹0</p>
+      <p class="summary-caption">Amount payable, all materials included</p>
+      <button id="generateBtn" class="btn-generate">Generate customer quotation</button>
+      <p class="summary-hint" id="emptyHint">Select items on the left to begin.</p>
+    </div>
+  </aside>
+
+</main>
+
+<!-- ================= CUSTOMER VIEW (only total is shown) ================= -->
+<div class="customer-overlay" id="customerOverlay">
+  <div class="customer-sheet">
+    <button class="overlay-close" id="closeOverlay" aria-label="Close">✕</button>
+
+    <p class="brand-name small">Sunline Solar</p>
+    <p class="quote-meta" id="quoteMeta"></p>
+
+    <label class="cust-label" for="customerName">Customer name (optional)</label>
+    <input type="text" id="customerName" class="cust-input" placeholder="e.g. R. Kumar">
+
+    <div class="quote-total-block">
+      <p class="quote-total-label">Total Amount Payable</p>
+      <p class="quote-total-value" id="quoteTotalValue">₹0</p>
+    </div>
+
+    <p class="quote-footnote">This quotation is valid for 15 days from the date above.</p>
+
+    <button class="btn-print" id="printBtn">Print / Save as PDF</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
